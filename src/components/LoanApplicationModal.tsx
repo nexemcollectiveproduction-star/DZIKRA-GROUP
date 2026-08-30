@@ -69,7 +69,7 @@ export const LoanApplicationModal: React.FC<LoanApplicationModalProps> = ({
 
     onSubmitLoan?.(appRecord);
 
-    const waText = `Halo Pengurus KSU Karomah Sinergi Indonesia (Dzikra Grup), saya ingin mengajukan pembiayaan/pinjaman:
+    const waText = `Halo Pengurus KSU Karomah Sinergi Indonesia (Dzikra Group), saya ingin mengajukan pembiayaan/pinjaman:
 - ID Pengajuan: ${appRecord.id}
 - Jenis Pinjaman: ${loanType}
 - Nama: ${fullName}
@@ -79,7 +79,7 @@ export const LoanApplicationModal: React.FC<LoanApplicationModalProps> = ({
 - Tenor: ${tenure} Bulan
 - Keperluan: ${purpose || 'Modal Usaha'}`;
 
-    window.open(`https://wa.me/6281388990012?text=${encodeURIComponent(waText)}`, '_blank');
+    window.open(`https://wa.me/6281312271662?text=${encodeURIComponent(waText)}`, '_blank');
   };
 
   return (

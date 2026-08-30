@@ -175,8 +175,8 @@ export const AdminDashboardModal: React.FC<AdminDashboardModalProps> = ({
   const [editingNewsId, setEditingNewsId] = useState<string | null>(null);
   const [newsTitle, setNewsTitle] = useState('');
   const [newsCategory, setNewsCategory] = useState('Koperasi & Finansial');
-  const [newsUnitTag, setNewsUnitTag] = useState('Dzikra Grup Holding');
-  const [newsAuthor, setNewsAuthor] = useState('Sekretariat Dzikra Grup');
+  const [newsUnitTag, setNewsUnitTag] = useState('Dzikra Group Holding');
+  const [newsAuthor, setNewsAuthor] = useState('Sekretariat Dzikra Group');
   const [newsDate, setNewsDate] = useState('');
   const [newsReadTime, setNewsReadTime] = useState('3 menit baca');
   const [newsSummary, setNewsSummary] = useState('');
@@ -300,7 +300,7 @@ export const AdminDashboardModal: React.FC<AdminDashboardModalProps> = ({
     if (e.target.files && e.target.files[0]) {
       const file = e.target.files[0];
       onUploadMainLogo(file);
-      triggerSuccess('Logo Resmi Dzikra Grup berhasil diperbarui!');
+      triggerSuccess('Logo Resmi Dzikra Group berhasil diperbarui!');
     }
   };
 
@@ -309,7 +309,7 @@ export const AdminDashboardModal: React.FC<AdminDashboardModalProps> = ({
     if (customLogoUrl.trim() && onSetMainLogoDataUrl) {
       onSetMainLogoDataUrl(customLogoUrl.trim());
       setCustomLogoUrl('');
-      triggerSuccess('Logo Resmi Dzikra Grup berhasil diperbarui via URL!');
+      triggerSuccess('Logo Resmi Dzikra Group berhasil diperbarui via URL!');
     }
   };
 
@@ -334,7 +334,7 @@ export const AdminDashboardModal: React.FC<AdminDashboardModalProps> = ({
     setNewsSummary(article.summary);
     setNewsContent(article.content);
     setNewsImageUrl(article.imageUrl);
-    setNewsTags(article.tags ? article.tags.join(', ') : 'DzikraGrup');
+    setNewsTags(article.tags ? article.tags.join(', ') : 'DzikraGroup');
     setNewsIsPinned(!!article.isPinned);
     setShowAddNewsForm(true);
   };
@@ -351,7 +351,7 @@ export const AdminDashboardModal: React.FC<AdminDashboardModalProps> = ({
       title: newsTitle.trim(),
       category: newsCategory,
       unitTag: newsUnitTag,
-      author: newsAuthor.trim() || 'Admin Dzikra Grup',
+      author: newsAuthor.trim() || 'Admin Dzikra Group',
       date: newsDate || new Date().toLocaleDateString('id-ID', { day: '2-digit', month: 'long', year: 'numeric' }),
       readTime: newsReadTime || '3 menit baca',
       summary: newsSummary.trim(),
@@ -389,7 +389,7 @@ export const AdminDashboardModal: React.FC<AdminDashboardModalProps> = ({
           const unit = units.find((u) => u.id === newMediaUnitId);
           onAddGalleryMedia({
             unitId: newMediaUnitId,
-            unitName: unit?.name || 'Dzikra Grup',
+            unitName: unit?.name || 'Dzikra Group',
             title: newMediaTitle || file.name,
             type: isVideo ? 'video' : 'image',
             url: event.target.result as string,
@@ -481,7 +481,7 @@ export const AdminDashboardModal: React.FC<AdminDashboardModalProps> = ({
                 </span>
               </div>
               <span className="text-xs text-[#ffd700] font-mono">
-                Dzikra Grup Holding & KSU Karomah Sinergi Indonesia
+                Dzikra Group Holding & KSU Karomah Sinergi Indonesia
               </span>
             </div>
           </div>
@@ -1075,7 +1075,7 @@ export const AdminDashboardModal: React.FC<AdminDashboardModalProps> = ({
               <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 bg-[#181722] p-5 rounded-3xl border border-white/10">
                 <div>
                   <h4 className="font-serif font-black text-lg text-white">
-                    Penerbitan & Pengelolaan Warta Dzikra Grup
+                    Penerbitan & Pengelolaan Warta Dzikra Group
                   </h4>
                   <p className="text-xs text-white/60 mt-0.5">
                     Publikasikan dokumentasi kegiatan, program koperasi, peresmian cafe, dan rilis resmi agar tampil di beranda publik.
@@ -1157,7 +1157,7 @@ export const AdminDashboardModal: React.FC<AdminDashboardModalProps> = ({
                         type="text"
                         value={newsUnitTag}
                         onChange={(e) => setNewsUnitTag(e.target.value)}
-                        placeholder="Dzikra Grup Holding"
+                        placeholder="Dzikra Group Holding"
                         className="w-full px-3.5 py-2 rounded-xl bg-[#09090b] border border-white/15 text-xs text-white"
                       />
                     </div>
@@ -1170,7 +1170,7 @@ export const AdminDashboardModal: React.FC<AdminDashboardModalProps> = ({
                         type="text"
                         value={newsAuthor}
                         onChange={(e) => setNewsAuthor(e.target.value)}
-                        placeholder="Sekretariat Dzikra Grup"
+                        placeholder="Sekretariat Dzikra Group"
                         className="w-full px-3.5 py-2 rounded-xl bg-[#09090b] border border-white/15 text-xs text-white"
                       />
                     </div>
@@ -1349,7 +1349,7 @@ export const AdminDashboardModal: React.FC<AdminDashboardModalProps> = ({
                             type: 'news',
                             id: article.id,
                             title: `Artikel: "${article.title}"`,
-                            subtitle: 'Artikel ini akan dicabut dari beranda berita publik Dzikra Grup.',
+                            subtitle: 'Artikel ini akan dicabut dari beranda berita publik Dzikra Group.',
                           });
                         }}
                         className="p-2 rounded-xl bg-rose-950/60 hover:bg-rose-600 text-rose-400 hover:text-white border border-rose-500/30 transition-all cursor-pointer"
@@ -1373,7 +1373,7 @@ export const AdminDashboardModal: React.FC<AdminDashboardModalProps> = ({
                   <div>
                     <h4 className="font-serif font-black text-xl text-white flex items-center gap-2">
                       <Building2 className="w-5 h-5 text-[#ffd700]" />
-                      <span>Logo Resmi Utama Dzikra Grup (Holding)</span>
+                      <span>Logo Resmi Utama Dzikra Group (Holding)</span>
                     </h4>
                     <p className="text-xs text-white/60 mt-1">
                       Logo ini ditampilkan pada bilah navigasi atas, kartu anggota e-KTA digital, kop surat, dan banner utama beranda.
@@ -1396,7 +1396,7 @@ export const AdminDashboardModal: React.FC<AdminDashboardModalProps> = ({
                       {mainLogo ? (
                         <img
                           src={mainLogo}
-                          alt="Logo Resmi Dzikra Grup"
+                          alt="Logo Resmi Dzikra Group"
                           className="w-full h-full object-contain"
                         />
                       ) : (
@@ -1415,7 +1415,7 @@ export const AdminDashboardModal: React.FC<AdminDashboardModalProps> = ({
                         type="button"
                         onClick={() => {
                           onResetMainLogo();
-                          triggerSuccess('Logo Dzikra Grup telah dikembalikan ke logo vektor bawaan.');
+                          triggerSuccess('Logo Dzikra Group telah dikembalikan ke logo vektor bawaan.');
                         }}
                         className="mt-2 text-xs text-rose-400 hover:text-rose-300 underline font-semibold cursor-pointer"
                       >
@@ -1473,7 +1473,7 @@ export const AdminDashboardModal: React.FC<AdminDashboardModalProps> = ({
                           type="button"
                           onClick={() => {
                             if (onSetMainLogoDataUrl) onSetMainLogoDataUrl(DZIKRA_OFFICIAL_LOGO_SVG);
-                            triggerSuccess('Logo Emas Dzikra Grup Aktif!');
+                            triggerSuccess('Logo Emas Dzikra Group Aktif!');
                           }}
                           className="px-3 py-1.5 rounded-xl bg-[#09090b] hover:bg-[#ffd700]/20 text-[#ffd700] text-xs font-bold border border-[#ffd700]/40 transition-colors cursor-pointer"
                         >
@@ -1499,7 +1499,7 @@ export const AdminDashboardModal: React.FC<AdminDashboardModalProps> = ({
               <div>
                 <div className="mb-4">
                   <h4 className="font-serif font-black text-lg text-white">
-                    Logo 10 Unit Usaha Dzikra Grup
+                    Logo 10 Unit Usaha Dzikra Group
                   </h4>
                   <p className="text-xs text-white/60">
                     Ganti atau perbarui logo khusus untuk masing-masing unit usaha di bawah ini.
@@ -1721,7 +1721,7 @@ export const AdminDashboardModal: React.FC<AdminDashboardModalProps> = ({
         <div className="bg-[#181722] px-6 py-3.5 border-t border-white/10 flex items-center justify-between text-xs text-white/60">
           <div className="flex items-center gap-1.5">
             <ShieldCheck className="w-4 h-4 text-emerald-400" />
-            <span>Seluruh perubahan data tersimpan aman ke sistem Dzikra Grup.</span>
+            <span>Seluruh perubahan data tersimpan aman ke sistem Dzikra Group.</span>
           </div>
           <button
             onClick={onClose}

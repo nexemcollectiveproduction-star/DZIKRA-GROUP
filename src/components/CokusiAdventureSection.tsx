@@ -56,7 +56,7 @@ export const CokusiAdventureSection: React.FC<CokusiAdventureSectionProps> = ({
           </h2>
           <div className="w-20 h-1 bg-[#ffd700] mx-auto mt-3 rounded-full" />
           <p className="mt-4 text-sm sm:text-base text-white/70 leading-relaxed font-light">
-            Tempat menikmati hidangan nikmat, berkumpul bersama keluarga atau rekan kerja, berbagi cerita inspiratif, sekaligus pusat etalase produk unggulan 10 unit Dzikra Grup.
+            Tempat menikmati hidangan nikmat, berkumpul bersama keluarga atau rekan kerja, berbagi cerita inspiratif, sekaligus pusat etalase produk unggulan 10 unit Dzikra Group.
           </p>
         </div>
 
@@ -89,7 +89,7 @@ export const CokusiAdventureSection: React.FC<CokusiAdventureSectionProps> = ({
             {/* Buttons */}
             <div className="flex flex-wrap items-center gap-3 pt-4">
               <a
-                href="https://wa.me/6281388990012?text=Halo%20Admin%20Cokusi%20Adventure,%20saya%20ingin%20reservasi%20tempat%20/%20tanya%20paket%20gathering."
+                href="https://wa.me/6281312271662?text=Halo%20Admin%20Cokusi%20Adventure,%20saya%20ingin%20reservasi%20tempat%20/%20tanya%20paket%20gathering."
                 target="_blank"
                 rel="noreferrer"
                 className="px-6 py-3.5 rounded-2xl bg-gradient-to-r from-[#ffd700] to-[#e6b800] hover:from-[#ffe066] hover:to-[#cca300] text-[#09090b] font-bold text-xs sm:text-sm shadow-xl transition-all flex items-center gap-2"

@@ -45,8 +45,8 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ units }) => {
       a: 'SHU dihitung berdasarkan proporsi keaktifan simpanan dan transaksi pembiayaan anggota dalam 1 tahun buku. Laporan keuangan diaudit secara berkala dan dipertanggungjawabkan dalam Rapat Anggota Tahunan (RAT) terbuka.',
     },
     {
-      q: 'Bagaimana perusahaan atau instansi mengajukan kerjasama B2B dengan Dzikra Grup?',
-      a: 'Silakan gunakan formulir kontak di bawah atau hubungi hotline WhatsApp resmi kami. Tim kemitraan Dzikra Grup siap melayani pengadaan seragam, suvenir cokelat korporat, paket wisata gathering, hingga sistem IT koperasi.',
+      q: 'Bagaimana perusahaan atau instansi mengajukan kerjasama B2B dengan Dzikra Group?',
+      a: 'Silakan gunakan formulir kontak di bawah atau hubungi hotline WhatsApp resmi kami. Tim kemitraan Dzikra Group siap melayani pengadaan seragam, suvenir cokelat korporat, paket wisata gathering, hingga sistem IT koperasi.',
     },
   ];
 
@@ -67,7 +67,7 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ units }) => {
       createdAt: new Date().toISOString(),
     });
 
-    const textMessage = `Halo Admin Dzikra Grup & KSU Karomah Sinergi, saya ingin mengajukan kerjasama / layanan:
+    const textMessage = `Halo Admin Dzikra Group & KSU Karomah Sinergi, saya ingin mengajukan kerjasama / layanan:
 - Nama: ${fullName}
 - No. HP: ${phone}
 - Kategori: ${interestType}
@@ -101,7 +101,7 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ units }) => {
           <div className="lg:col-span-5 space-y-6">
             <div className="bg-[#14121d] rounded-3xl p-6 sm:p-8 border border-white/10 shadow-lg space-y-5">
               <h3 className="font-serif font-bold text-xl text-white">
-                Kantor Pusat Dzikra Grup
+                Kantor Pusat Dzikra Group
               </h3>
               <p className="text-xs sm:text-sm text-white/60 leading-relaxed font-light">
                 Pusat administrasi terpadu KSU Karomah Sinergi Indonesia dan seluruh holding unit usaha.
@@ -252,7 +252,7 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ units }) => {
                       onChange={(e) => setSelectedUnit(e.target.value)}
                       className="w-full px-3.5 py-2.5 rounded-xl border border-white/15 bg-[#09090b] text-white text-xs sm:text-sm focus:outline-none focus:ring-1 focus:ring-[#ffd700]"
                     >
-                      <option value="Semua Unit Dzikra Grup">Semua Unit Dzikra Grup</option>
+                      <option value="Semua Unit Dzikra Group">Semua Unit Dzikra Group</option>
                       {units.map((u) => (
                         <option key={u.id} value={u.name}>
                           Unit #{u.id}: {u.shortName}

@@ -59,31 +59,31 @@ export const EditLogoModal: React.FC<EditLogoModalProps> = ({
 
   const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     if (!isAdmin) {
-      onRequireAdmin('mengubah logo Dzikra Grup');
+      onRequireAdmin('mengubah logo Dzikra Group');
       return;
     }
     if (e.target.files && e.target.files[0]) {
       const file = e.target.files[0];
       onUploadMainLogo(file);
-      showToast('Logo resmi Dzikra Grup berhasil diperbarui!');
+      showToast('Logo resmi Dzikra Group berhasil diperbarui!');
     }
   };
 
   const handleApplyUrl = () => {
     if (!isAdmin) {
-      onRequireAdmin('mengubah logo Dzikra Grup');
+      onRequireAdmin('mengubah logo Dzikra Group');
       return;
     }
     if (!customUrl.trim()) return;
     onSetMainLogoDataUrl(customUrl.trim());
     setCustomUrl('');
     setPreviewUrl(null);
-    showToast('Tautan logo Dzikra Grup berhasil diterapkan!');
+    showToast('Tautan logo Dzikra Group berhasil diterapkan!');
   };
 
   const handlePresetSelect = (presetSvg: string, name: string) => {
     if (!isAdmin) {
-      onRequireAdmin('menerapkan preset logo resmi Dzikra Grup');
+      onRequireAdmin('menerapkan preset logo resmi Dzikra Group');
       return;
     }
     onSetMainLogoDataUrl(presetSvg);
@@ -123,7 +123,7 @@ export const EditLogoModal: React.FC<EditLogoModalProps> = ({
                 )}
               </div>
               <p className="text-xs sm:text-sm text-white/60 mt-0.5">
-                Sesuaikan logo resmi Dzikra Grup (holding) dan logo khusus 10 unit usaha
+                Sesuaikan logo resmi Dzikra Group (holding) dan logo khusus 10 unit usaha
               </p>
             </div>
           </div>
@@ -174,7 +174,7 @@ export const EditLogoModal: React.FC<EditLogoModalProps> = ({
             }`}
           >
             <Building2 className="w-4 h-4" />
-            <span>Logo Utama Dzikra Grup</span>
+            <span>Logo Utama Dzikra Group</span>
           </button>
 
           <button
@@ -233,7 +233,7 @@ export const EditLogoModal: React.FC<EditLogoModalProps> = ({
                     </span>
                   </div>
                   <p className="text-xs text-white/70 leading-relaxed">
-                    Logo ini langsung tampil pada <strong>Navbar Utama</strong>, <strong>Hero Header</strong>, <strong>Footer Situs</strong>, dan <strong>Kartu Tanda Anggota (e-KTA)</strong> Dzikra Grup.
+                    Logo ini langsung tampil pada <strong>Navbar Utama</strong>, <strong>Hero Header</strong>, <strong>Footer Situs</strong>, dan <strong>Kartu Tanda Anggota (e-KTA)</strong> Dzikra Group.
                   </p>
 
                   <div className="pt-2 flex flex-wrap items-center justify-center sm:justify-start gap-2.5">
@@ -248,7 +248,7 @@ export const EditLogoModal: React.FC<EditLogoModalProps> = ({
                       type="button"
                       onClick={() => {
                         if (!isAdmin) {
-                          onRequireAdmin('mengunggah logo Dzikra Grup');
+                          onRequireAdmin('mengunggah logo Dzikra Group');
                           return;
                         }
                         fileInputRef.current?.click();
@@ -263,11 +263,11 @@ export const EditLogoModal: React.FC<EditLogoModalProps> = ({
                       type="button"
                       onClick={() => {
                         if (!isAdmin) {
-                          onRequireAdmin('mereset logo Dzikra Grup');
+                          onRequireAdmin('mereset logo Dzikra Group');
                           return;
                         }
                         onResetMainLogo();
-                        showToast('Logo resmi standar Dzikra Grup telah dipulihkan.');
+                        showToast('Logo resmi standar Dzikra Group telah dipulihkan.');
                       }}
                       className="px-3.5 py-2.5 rounded-xl bg-white/5 hover:bg-white/10 text-white/80 text-xs font-semibold border border-white/10 flex items-center gap-1.5 cursor-pointer transition-colors"
                     >
@@ -316,7 +316,7 @@ export const EditLogoModal: React.FC<EditLogoModalProps> = ({
             <div className="space-y-4">
               <div className="p-4 rounded-2xl bg-[#181722] border border-white/10">
                 <h4 className="font-serif font-black text-sm text-white mb-1">
-                  Pilihan Varian Logo Resmi Dzikra Grup
+                  Pilihan Varian Logo Resmi Dzikra Group
                 </h4>
                 <p className="text-xs text-white/60">
                   Pilih varian lambang resmi resolusi tinggi vektor berkualitas tinggi dengan teks semboyan <em>"Satu Atap, Berjuta Karya"</em>.

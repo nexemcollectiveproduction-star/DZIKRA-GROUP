@@ -30,11 +30,11 @@ export const StatsSection: React.FC = () => {
             Transparansi & Skala Operasional
           </span>
           <h2 className="font-serif font-black text-3xl sm:text-4xl md:text-5xl text-white mt-2 relative inline-block">
-            Data Singkat Dzikra Grup
+            Data Singkat Dzikra Group
           </h2>
           <div className="w-20 h-1 bg-[#ffd700] mx-auto mt-3 rounded-full" />
           <p className="mt-4 text-sm sm:text-base text-white/70 leading-relaxed font-light">
-            Ringkasan kapabilitas menyeluruh ekosistem Dzikra Grup dan KSU Karomah Sinergi Indonesia dalam melayani kebutuhan anggota dan masyarakat.
+            Ringkasan kapabilitas menyeluruh ekosistem Dzikra Group dan KSU Karomah Sinergi Indonesia dalam melayani kebutuhan anggota dan masyarakat.
           </p>
         </div>
 

@@ -1,7 +1,7 @@
 import { BusinessUnit, SavingsProduct, LoanProduct, DigitalFeature, GalleryMediaItem, MemberAccountDemo, NewsArticle } from '../types';
 
 export const DZIKRA_OFFICIAL_CONTACT = {
-  companyName: 'DZIKRA GRUP',
+  companyName: 'DZIKRA GROUP',
   parentCooperative: 'KSU KAROMAH SINERGI INDONESIA',
   headOffice: 'Perumahan PEPABRI Batulawang No. 183 Blok E RT. 05 RW. 09 Desa Talagasari Kecamatan Kadungora Kabupaten Garut, Jawa Barat, Indonesia Kode Pos. 44153',
   shortLocation: 'Batulawang, Kadungora, Kab. Garut, Jawa Barat (44153)',
@@ -25,7 +25,7 @@ export const DZIKRA_MANAGEMENT_TEAM: ManagementMember[] = [
     name: 'RISA KRISTALIA NURLAELA, ST., MT.',
     badge: 'Pendiri & Pemilik',
     category: 'Eksekutif',
-    description: 'Pemegang visi strategis dan arah pengembangan ekosistem holding Dzikra Grup & KSU Karomah Sinergi Indonesia.',
+    description: 'Pemegang visi strategis dan arah pengembangan ekosistem holding Dzikra Group & KSU Karomah Sinergi Indonesia.',
   },
   {
     role: 'DIREKTUR UTAMA',
@@ -80,7 +80,7 @@ export const BUSINESS_UNITS: BusinessUnit[] = [
     bidang: 'Teknologi & Sistem Informasi',
     slogan: 'Transformasi Digital Koperasi & Bisnis Modern',
     description: 'Mengembangkan aplikasi anggota, sistem perbankan digital, situs web, dan solusi teknologi koperasi modern.',
-    longDescription: 'PT. Cakrawala Dzikra Teknologi merupakan sayap teknologi Dzikra Grup yang mendedikasikan inovasi perangkat lunak untuk perbankan koperasi digital, POS kasir unit usaha, sistem manajemen anggota terpadu (Core Cooperative System), mobile banking, hingga integrasi pembayaran QRIS dan gateway keuangan.',
+    longDescription: 'PT. Cakrawala Dzikra Teknologi merupakan sayap teknologi Dzikra Group yang mendedikasikan inovasi perangkat lunak untuk perbankan koperasi digital, POS kasir unit usaha, sistem manajemen anggota terpadu (Core Cooperative System), mobile banking, hingga integrasi pembayaran QRIS dan gateway keuangan.',
     logoUrl: '',
     defaultIconName: 'Cpu',
     badge: 'Tech & Software Hub',
@@ -128,7 +128,7 @@ export const BUSINESS_UNITS: BusinessUnit[] = [
     bidang: 'Layanan Keuangan & Simpan Pinjam',
     slogan: 'Amanah, Mandiri, Berkah — Berazas Kekeluargaan',
     description: 'Induk sekaligus unit layanan keuangan inti. Mengelola 8 jenis simpanan & 6 jenis pinjaman berprinsip koperasi.',
-    longDescription: 'Koperasi Serba Usaha (KSU) Karomah Sinergi Indonesia adalah pilar legalitas dan finansial utama Dzikra Grup. Berbadan hukum resmi dan diawasi dinas koperasi, kami menghadirkan pengelolaan dana anggota yang transparan, jasa pinjaman berkeadilan, bagi hasil SHU tahunan yang adil, serta fasilitas pembiayaan produktif.',
+    longDescription: 'Koperasi Serba Usaha (KSU) Karomah Sinergi Indonesia adalah pilar legalitas dan finansial utama Dzikra Group. Berbadan hukum resmi dan diawasi dinas koperasi, kami menghadirkan pengelolaan dana anggota yang transparan, jasa pinjaman berkeadilan, bagi hasil SHU tahunan yang adil, serta fasilitas pembiayaan produktif.',
     logoUrl: '',
     defaultIconName: 'Coins',
     badge: 'Badan Hukum Koperasi',
@@ -176,7 +176,7 @@ export const BUSINESS_UNITS: BusinessUnit[] = [
     bidang: 'Produk Olahan Cokelat Asli',
     slogan: 'Rasa Hangat, Cita Rasa Otentik Kameumeut',
     description: 'Produk olahan cokelat asli dengan resep khas, bahan pilihan bermutu tinggi, dan cita rasa hangat akrab.',
-    longDescription: 'Cokusi Kameumeut adalah produsen olahan cokelat premium kebanggaan Dzikra Grup. Menggunakan 100% kakao pilihan petani lokal berkualitas tinggi yang diolah secara higienis, menghasilkan varian cokelat batangan, bubuk cokelat seduh, hingga selai dan camilan cokelat aneka topping yang memanjakan lidah.',
+    longDescription: 'Cokusi Kameumeut adalah produsen olahan cokelat premium kebanggaan Dzikra Group. Menggunakan 100% kakao pilihan petani lokal berkualitas tinggi yang diolah secara higienis, menghasilkan varian cokelat batangan, bubuk cokelat seduh, hingga selai dan camilan cokelat aneka topping yang memanjakan lidah.',
     logoUrl: '',
     defaultIconName: 'Coffee',
     badge: 'Produk Unggulan',
@@ -227,7 +227,7 @@ export const BUSINESS_UNITS: BusinessUnit[] = [
     bidang: 'Kuliner, Tempat Berkumpul & Promosi',
     slogan: 'Nongkrong Santai, Rasa Juara, Nuansa Petualangan',
     description: 'Kafe bertema petualangan — tempat menikmati hidangan, berkumpul, berbagi cerita, sekaligus showroom produk grup.',
-    longDescription: 'Cokusi Adventure Cafe menggabungkan suasana kafe modern berkonsep petualangan alam terbuka (outdoor & rustic indoor lounge) dengan ragam kuliner nikmat. Menjadi titik temu komunitas, ruang kerja bersama (coworking), dan pusat display seluruh produk unggulan 10 unit usaha Dzikra Grup.',
+    longDescription: 'Cokusi Adventure Cafe menggabungkan suasana kafe modern berkonsep petualangan alam terbuka (outdoor & rustic indoor lounge) dengan ragam kuliner nikmat. Menjadi titik temu komunitas, ruang kerja bersama (coworking), dan pusat display seluruh produk unggulan 10 unit usaha Dzikra Group.',
     logoUrl: '',
     defaultIconName: 'Compass',
     badge: 'Hub & Cafe',
@@ -523,7 +523,7 @@ export const BUSINESS_UNITS: BusinessUnit[] = [
     bidang: 'Produksi, Pengolahan & Rantai Pasok',
     slogan: 'Standar Mutu Terjaga, Distribusi Cepat & Merata',
     description: 'Mengelola standar bahan baku, proses manufaktur higienis, pengemasan modern, hingga pengiriman tepat waktu.',
-    longDescription: 'Unit Produksi & Distribusi adalah tulang punggung operasional Dzikra Grup yang mengawasi standardisasi mutu, quality control (QC), pengolahan sentral bahan pangan, pengemasan food grade, serta armada logistik yang mengantar produk ke seluruh cabang dan pelanggan tepat waktu.',
+    longDescription: 'Unit Produksi & Distribusi adalah tulang punggung operasional Dzikra Group yang mengawasi standardisasi mutu, quality control (QC), pengolahan sentral bahan pangan, pengemasan food grade, serta armada logistik yang mengantar produk ke seluruh cabang dan pelanggan tepat waktu.',
     logoUrl: '',
     defaultIconName: 'Truck',
     badge: 'Supply Chain & Logistics',
@@ -959,7 +959,7 @@ export const INITIAL_NEWS_ARTICLES: NewsArticle[] = [
 
 Dalam laporan pertanggungjawaban pengurus, tercatat total aset kelolaan koperasi mengalami pertumbuhan signifikan sebesar 34,2% secara year-on-year. Pertumbuhan ini didorong oleh kuatnya partisipasi permodalan anggota (Simpanan Pokok & Wajib), optimalisasi 8 skema tabungan, dan kelancaran pengembalian pinjaman modal usaha produktif.
 
-"Integrasi 10 unit usaha di bawah naungan Dzikra Grup menjadi lokomotif utama perputaran ekonomi yang sehat. Setiap rupiah simpanan anggota terbukti menggerakkan sektor riil — mulai dari pabrikasi cokelat Cokusi Kameumeut, kedai kopi Cafe Sepertiga Malam, butik Dzi Collection, hingga sektor pariwisata Cokusi Adventure," ungkap Ketua Pengurus Koperasi dalam pidato pembukaan.
+"Integrasi 10 unit usaha di bawah naungan Dzikra Group menjadi lokomotif utama perputaran ekonomi yang sehat. Setiap rupiah simpanan anggota terbukti menggerakkan sektor riil — mulai dari pabrikasi cokelat Cokusi Kameumeut, kedai kopi Cafe Sepertiga Malam, butik Dzi Collection, hingga sektor pariwisata Cokusi Adventure," ungkap Ketua Pengurus Koperasi dalam pidato pembukaan.
 
 Puncak acara ditandai dengan pencairan Sisa Hasil Usaha (SHU) secara serentak langsung ke rekening Tabungan Sukarela anggota melalui sistem core banking Dzikra Mobile, menghadirkan transparansi penuh dan kegembiraan bagi seluruh keluarga besar koperasi.`,
     imageUrl: 'https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&fit=crop&w=1200&q=80',
@@ -974,12 +974,12 @@ Puncak acara ditandai dengan pencairan Sisa Hasil Usaha (SHU) secara serentak la
     author: 'Divisi Hilirisasi Pertanian',
     unitTag: 'Cokusi Kameumeut',
     readTime: '3 menit baca',
-    summary: 'Dzikra Grup melalui Cokusi Kameumeut dan CV Karomah Indonesia merayakan panen raya biji kakao fermentasi bersama 120 petani mitra di perkebunan binaan.',
-    content: `Komitmen Dzikra Grup dalam memajukan hilirisasi komoditas lokal kembali membuahkan hasil nyata. Bersama lebih dari 120 petani binaan di kawasan perkebunan rakyat, Dzikra Grup menyelenggarakan Panen Raya Kakao Unggul dan serah terima fasilitas pengeringan higienis berstandar ekspor.
+    summary: 'Dzikra Group melalui Cokusi Kameumeut dan CV Karomah Indonesia merayakan panen raya biji kakao fermentasi bersama 120 petani mitra di perkebunan binaan.',
+    content: `Komitmen Dzikra Group dalam memajukan hilirisasi komoditas lokal kembali membuahkan hasil nyata. Bersama lebih dari 120 petani binaan di kawasan perkebunan rakyat, Dzikra Group menyelenggarakan Panen Raya Kakao Unggul dan serah terima fasilitas pengeringan higienis berstandar ekspor.
 
 Seluruh hasil panen kakao dibeli langsung oleh unit produksi Cokusi Kameumeut dengan skema harga acuan yang adil di atas rata-rata pasar perantara (Fair Trade). Program ini menjamin kepastian pendapatan bagi petani sekaligus mengamankan pasokan bahan baku kakao organik terbaik.
 
-Pada kesempatan yang sama, Cokusi Kameumeut meluncurkan varian produk premium terbarunya: "Cokusi Dark Classic 75%" dan "Cokusi Kameumeut Choco-Praline Gift Box", yang kini telah didistribusikan ke jaringan ritel, toko oleh-oleh, dan kafe rekanan Dzikra Grup di seluruh nusantara.`,
+Pada kesempatan yang sama, Cokusi Kameumeut meluncurkan varian produk premium terbarunya: "Cokusi Dark Classic 75%" dan "Cokusi Kameumeut Choco-Praline Gift Box", yang kini telah didistribusikan ke jaringan ritel, toko oleh-oleh, dan kafe rekanan Dzikra Group di seluruh nusantara.`,
     imageUrl: 'https://images.unsplash.com/photo-1548907040-4baa42d10919?auto=format&fit=crop&w=1200&q=80',
     isPinned: false,
     tags: ['Panen Raya', 'Cokelat Lokal', 'Fair Trade', 'Petani Berdaya'],
@@ -1000,7 +1000,7 @@ Beberapa fitur unggulan yang dirilis meliputi:
 2. E-KTA Pintar dengan Barcode Otentikasi: Memudahkan presensi pertemuan koperasi dan aktivasi diskon belanja hingga 15% di seluruh 10 unit usaha.
 3. Notifikasi WhatsApp & Struk Digital: Mengirim konfirmasi setoran, penarikan, cicilan pinjaman, dan laporan mutasi buku tabungan secara otomatis dan seketika ke WhatsApp anggota terdaftar.
 
-"Kami ingin membuktikan bahwa koperasi modern mampu berdiri setara dengan institusi fintech modern dalam hal kecepatan dan kenyamanan, tanpa meninggalkan nilai kekeluargaan dan asas gotong royong," jelas Direktur Teknologi Dzikra Grup.`,
+"Kami ingin membuktikan bahwa koperasi modern mampu berdiri setara dengan institusi fintech modern dalam hal kecepatan dan kenyamanan, tanpa meninggalkan nilai kekeluargaan dan asas gotong royong," jelas Direktur Teknologi Dzikra Group.`,
     imageUrl: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=1200&q=80',
     isPinned: false,
     tags: ['SuperApp', 'QRIS Koperasi', 'Transformasi Digital', 'Fintech Syariah'],
@@ -1014,7 +1014,7 @@ Beberapa fitur unggulan yang dirilis meliputi:
     unitTag: 'Cokusi Adventure Cafe & CV Karomah',
     readTime: '4 menit baca',
     summary: 'Ratusan peserta dari berbagai komunitas otomotif dan keluarga memeriahkan pembukaan rute baru Jelajah Hutan Pinus dan River Tubing di Cokusi Adventure Park.',
-    content: `Kawasan wisata terpadu Dzikra Grup yang dikelola oleh CV. Karomah Indonesia dan Cokusi Adventure Cafe menggelar gelaran akbar "Dzikra Eco-Adventure Weekend 2026". 
+    content: `Kawasan wisata terpadu Dzikra Group yang dikelola oleh CV. Karomah Indonesia dan Cokusi Adventure Cafe menggelar gelaran akbar "Dzikra Eco-Adventure Weekend 2026". 
 
 Acara ini memadukan petualangan offroad 4x4 melintasi lereng pegunungan hijau, river tubing di sungai alami yang jernih, glamping keluarga bernuansa api unggun, serta tur edukasi "From Cocoa Bean to Cup" bagi anak-anak sekolah.
 
@@ -1050,7 +1050,7 @@ Program ini dirancang khusus dengan persyaratan berkas yang mudah, tanpa biaya t
     unitTag: 'Lervara Modern Living',
     readTime: '3 menit baca',
     summary: 'Unit Lervara membina puluhan pemuda kreatif dalam mengolah limbah kayu jati solid dan kanvas organik menjadi produk dekorasi bernilai ekonomi tinggi.',
-    content: `Lervara Modern Living bersama divisi CSR Dzikra Grup menyelenggarakan workshop intensif "Kreativitas Kayu & Lilin Aromaterapi Ramah Lingkungan" yang diikuti oleh 40 pemuda desa dan santri wirausaha.
+    content: `Lervara Modern Living bersama divisi CSR Dzikra Group menyelenggarakan workshop intensif "Kreativitas Kayu & Lilin Aromaterapi Ramah Lingkungan" yang diikuti oleh 40 pemuda desa dan santri wirausaha.
 
 Peserta diajarkan teknik pembuatan desk organizer kayu jati, pencetakan lilin soy wax organik aromaterapi, serta teknik jahit tas kanvas water-repellent. Karya terbaik peserta langsung diserap sebagai produk resmi katalog Lervara dan dipasarkan melalui kanal distribusi CV. Sinergi Dzikra Indonesia dan Dzikra Mart.
 

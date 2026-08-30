@@ -54,7 +54,7 @@ export const ProductsSection: React.FC<ProductsSectionProps> = ({
           </h2>
           <div className="w-20 h-1 bg-[#ffd700] mx-auto mt-3 rounded-full" />
           <p className="mt-4 text-sm sm:text-base text-white/70 leading-relaxed font-light">
-            Jelajahi produk olahan cokelat asli, racikan kopi specialty, busana muslim berkualitas, hingga kerajinan gaya hidup modern dari unit usaha Dzikra Grup.
+            Jelajahi produk olahan cokelat asli, racikan kopi specialty, busana muslim berkualitas, hingga kerajinan gaya hidup modern dari unit usaha Dzikra Group.
           </p>
         </div>
 
@@ -122,7 +122,7 @@ export const ProductsSection: React.FC<ProductsSectionProps> = ({
                 </div>
 
                 <a
-                  href={`https://wa.me/6281388990012?text=Halo%20Admin%20Dzikra%20Grup,%20saya%20tertarik%20dengan%20produk%20${encodeURIComponent(prod.name)}%20(${encodeURIComponent(prod.unitShortName)})`}
+                  href={`https://wa.me/6281312271662?text=Halo%20Admin%20Dzikra%20Group,%20saya%20tertarik%20dengan%20produk%20${encodeURIComponent(prod.name)}%20(${encodeURIComponent(prod.unitShortName)})`}
                   target="_blank"
                   rel="noreferrer"
                   className="px-3.5 py-2 rounded-xl bg-gradient-to-r from-[#ffd700] to-[#e6b800] hover:from-[#ffe066] hover:to-[#cca300] text-[#09090b] text-xs font-bold transition-all shadow-md flex items-center gap-1.5"

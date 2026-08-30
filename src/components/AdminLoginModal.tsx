@@ -97,7 +97,7 @@ export const AdminLoginModal: React.FC<AdminLoginModalProps> = ({
             Login Administrator
           </h3>
           <p className="text-xs text-white/60 mt-1.5 leading-relaxed font-light">
-            {initialPromptMessage || 'Akses khusus pengurus untuk mengubah logo Dzikra Grup & Unit, mengunggah foto produk, menambah berita/kegiatan, dan mengelola koperasi.'}
+            {initialPromptMessage || 'Akses khusus pengurus untuk mengubah logo Dzikra Group & Unit, mengunggah foto produk, menambah berita/kegiatan, dan mengelola koperasi.'}
           </p>
         </div>
 
@@ -118,7 +118,7 @@ export const AdminLoginModal: React.FC<AdminLoginModalProps> = ({
             </button>
           </div>
           <p className="text-white/60 text-[11px] pt-1 border-t border-white/10">
-            Kata sandi dan data kredensial terlindungi dengan enkripsi keamanan pengurus Dzikra Grup.
+            Kata sandi dan data kredensial terlindungi dengan enkripsi keamanan pengurus Dzikra Group.
           </p>
         </div>
 

@@ -35,7 +35,7 @@ export const Footer: React.FC<FooterProps> = ({ units, mainLogo, onSelectUnit })
                 <div className="w-12 h-12 rounded-2xl bg-[#14121d] border border-[#ffd700]/30 p-1.5 flex items-center justify-center overflow-hidden shadow-lg">
                   <img
                     src={mainLogo}
-                    alt="Logo Dzikra Grup"
+                    alt="Logo Dzikra Group"
                     className="w-full h-full object-contain"
                   />
                 </div>
@@ -46,7 +46,7 @@ export const Footer: React.FC<FooterProps> = ({ units, mainLogo, onSelectUnit })
               )}
               <div>
                 <span className="font-serif font-black text-xl text-white block tracking-wide">
-                  DZIKRA GRUP
+                  DZIKRA GROUP
                 </span>
                 <span className="text-[11px] text-[#ffd700] font-medium font-serif italic">
                   Bersinergi, Berkarya, Bertumbuh Bersama
@@ -126,7 +126,7 @@ export const Footer: React.FC<FooterProps> = ({ units, mainLogo, onSelectUnit })
       <div className="bg-[#050507] py-5 px-4 border-t border-white/5 text-xs text-white/50">
         <div className="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-3 text-center sm:text-left">
           <div>
-            <span>© 2026 Dzikra Grup & KSU Karomah Sinergi Indonesia. Seluruh hak cipta dilindungi.</span>
+            <span>© 2026 Dzikra Group & KSU Karomah Sinergi Indonesia. Seluruh hak cipta dilindungi.</span>
           </div>
 
           <div className="flex items-center gap-4">

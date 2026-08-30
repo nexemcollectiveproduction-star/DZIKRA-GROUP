@@ -1,6 +1,6 @@
 {
-  "name": "Dzikra Grup",
-  "description": "Portal resmi Dzikra Grup — Wadah persatuan 10 unit usaha dan layanan keuangan koperasi modern KSU Karomah Sinergi Indonesia.",
+  "name": "Dzikra Group",
+  "description": "Portal resmi Dzikra Group — Wadah persatuan 10 unit usaha dan layanan keuangan koperasi modern KSU Karomah Sinergi Indonesia.",
   "requestFramePermissions": [],
   "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
 }

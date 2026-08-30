@@ -305,7 +305,7 @@ export default function App() {
   // Main Dzikra Group Logo Handlers
   const handleUploadMainLogo = (file: File) => {
     if (!isAdmin) {
-      handleRequireAdmin('mengubah logo resmi Dzikra Grup');
+      handleRequireAdmin('mengubah logo resmi Dzikra Group');
       return;
     }
     const reader = new FileReader();
@@ -321,7 +321,7 @@ export default function App() {
 
   const handleSetMainLogoDataUrl = (dataUrl: string) => {
     if (!isAdmin) {
-      handleRequireAdmin('mengubah logo resmi Dzikra Grup');
+      handleRequireAdmin('mengubah logo resmi Dzikra Group');
       return;
     }
     setMainLogo(dataUrl);
@@ -330,7 +330,7 @@ export default function App() {
 
   const handleResetMainLogo = () => {
     if (!isAdmin) {
-      handleRequireAdmin('mereset logo Dzikra Grup');
+      handleRequireAdmin('mereset logo Dzikra Group');
       return;
     }
     setMainLogo(DZIKRA_OFFICIAL_LOGO_SVG);
@@ -567,7 +567,7 @@ export default function App() {
         {/* 4. About Us & 5 Service Sectors */}
         <AboutSection />
 
-        {/* 5. Berita & Kegiatan Publik Dzikra Grup */}
+        {/* 5. Berita & Kegiatan Publik Dzikra Group */}
         <NewsSection
           articles={newsArticles}
           isAdmin={isAdmin}

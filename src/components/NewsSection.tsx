@@ -134,11 +134,11 @@ export const NewsSection: React.FC<NewsSectionProps> = ({
           </div>
 
           <h2 className="font-serif font-black text-3xl sm:text-4xl md:text-5xl text-white tracking-tight">
-            Berita & Kegiatan Terkini <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#ffd700] via-[#ffe066] to-[#f39c12]">Dzikra Grup</span>
+            Berita & Kegiatan Terkini <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#ffd700] via-[#ffe066] to-[#f39c12]">Dzikra Group</span>
           </h2>
           <div className="w-20 h-1 bg-gradient-to-r from-[#ffd700] to-[#e6b800] mx-auto mt-3 rounded-full" />
           <p className="mt-4 text-sm sm:text-base text-white/70 leading-relaxed font-light">
-            Ikuti perkembangan terbaru, kegiatan ekonomi, hilirisasi produk, pemberdayaan anggota, dan dokumentasi ekspedisi dari seluruh unit usaha Dzikra Grup.
+            Ikuti perkembangan terbaru, kegiatan ekonomi, hilirisasi produk, pemberdayaan anggota, dan dokumentasi ekspedisi dari seluruh unit usaha Dzikra Group.
           </p>
         </div>
 

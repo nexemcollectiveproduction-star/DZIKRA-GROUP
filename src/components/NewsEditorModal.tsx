@@ -34,13 +34,13 @@ export const NewsEditorModal: React.FC<NewsEditorModalProps> = ({
   const [title, setTitle] = useState('');
   const [category, setCategory] = useState('Koperasi & Finansial');
   const [unitTag, setUnitTag] = useState('KSU Karomah Sinergi Indonesia');
-  const [author, setAuthor] = useState('Sekretariat Dzikra Grup');
+  const [author, setAuthor] = useState('Sekretariat Dzikra Group');
   const [date, setDate] = useState('');
   const [readTime, setReadTime] = useState('3 menit baca');
   const [summary, setSummary] = useState('');
   const [content, setContent] = useState('');
   const [imageUrl, setImageUrl] = useState('');
-  const [tagsInput, setTagsInput] = useState('DzikraGrup, Kegiatan, Berita');
+  const [tagsInput, setTagsInput] = useState('DzikraGroup, Kegiatan, Berita');
   const [isPinned, setIsPinned] = useState(false);
   const [imageTab, setImageTab] = useState<'upload' | 'url'>('upload');
 
@@ -48,8 +48,8 @@ export const NewsEditorModal: React.FC<NewsEditorModalProps> = ({
     if (articleToEdit) {
       setTitle(articleToEdit.title || '');
       setCategory(articleToEdit.category || 'Koperasi & Finansial');
-      setUnitTag(articleToEdit.unitTag || 'Dzikra Grup Holding');
-      setAuthor(articleToEdit.author || 'Sekretariat Dzikra Grup');
+      setUnitTag(articleToEdit.unitTag || 'Dzikra Group Holding');
+      setAuthor(articleToEdit.author || 'Sekretariat Dzikra Group');
       setDate(articleToEdit.date || '');
       setReadTime(articleToEdit.readTime || '3 menit baca');
       setSummary(articleToEdit.summary || '');
@@ -61,13 +61,13 @@ export const NewsEditorModal: React.FC<NewsEditorModalProps> = ({
       setTitle('');
       setCategory('Koperasi & Finansial');
       setUnitTag('KSU Karomah Sinergi Indonesia');
-      setAuthor('Sekretariat Dzikra Grup');
+      setAuthor('Sekretariat Dzikra Group');
       setDate(new Date().toLocaleDateString('id-ID', { day: '2-digit', month: 'long', year: 'numeric' }));
       setReadTime('3 menit baca');
       setSummary('');
       setContent('');
       setImageUrl('');
-      setTagsInput('DzikraGrup, Kegiatan, Pemberdayaan');
+      setTagsInput('DzikraGroup, Kegiatan, Pemberdayaan');
       setIsPinned(false);
     }
   }, [articleToEdit, isOpen]);
@@ -99,7 +99,7 @@ export const NewsEditorModal: React.FC<NewsEditorModalProps> = ({
       title: title.trim(),
       category: category,
       unitTag: unitTag,
-      author: author.trim() || 'Admin Dzikra Grup',
+      author: author.trim() || 'Admin Dzikra Group',
       date: date || new Date().toLocaleDateString('id-ID', { day: '2-digit', month: 'long', year: 'numeric' }),
       readTime: readTime || '3 menit baca',
       summary: summary.trim(),
@@ -136,7 +136,7 @@ export const NewsEditorModal: React.FC<NewsEditorModalProps> = ({
                 {isEditing ? 'Edit Warta & Berita Kegiatan' : 'Tulis Berita / Kegiatan Baru'}
               </h3>
               <p className="text-xs text-white/60">
-                Publikasikan dokumentasi kegiatan resmi Dzikra Grup & unit usaha
+                Publikasikan dokumentasi kegiatan resmi Dzikra Group & unit usaha
               </p>
             </div>
           </div>
@@ -194,7 +194,7 @@ export const NewsEditorModal: React.FC<NewsEditorModalProps> = ({
                 onChange={(e) => setUnitTag(e.target.value)}
                 className="w-full px-3 py-2 rounded-xl bg-[#09090b] border border-white/15 text-xs text-white focus:outline-none focus:border-[#ffd700]"
               >
-                <option value="Dzikra Grup Holding">Dzikra Grup Holding</option>
+                <option value="Dzikra Group Holding">Dzikra Group Holding</option>
                 {units.map((u) => (
                   <option key={u.id} value={u.name}>
                     {u.shortName}
@@ -233,7 +233,7 @@ export const NewsEditorModal: React.FC<NewsEditorModalProps> = ({
                 type="text"
                 value={author}
                 onChange={(e) => setAuthor(e.target.value)}
-                placeholder="Sekretariat Dzikra Grup"
+                placeholder="Sekretariat Dzikra Group"
                 className="w-full px-3 py-2 rounded-xl bg-[#09090b] border border-white/15 text-xs text-white focus:outline-none focus:border-[#ffd700]"
               />
             </div>

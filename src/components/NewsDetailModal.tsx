@@ -156,7 +156,7 @@ export const NewsDetailModal: React.FC<NewsDetailModalProps> = ({
               </div>
               <div>
                 <h4 className="font-serif font-bold text-sm text-white">
-                  Ingin Terlibat dalam Kegiatan Dzikra Grup?
+                  Ingin Terlibat dalam Kegiatan Dzikra Group?
                 </h4>
                 <p className="text-xs text-white/70 mt-0.5">
                   Hubungi sekretariat atau bergabung menjadi anggota KSU Karomah Sinergi Indonesia.
@@ -165,7 +165,7 @@ export const NewsDetailModal: React.FC<NewsDetailModalProps> = ({
             </div>
 
             <a
-              href="https://wa.me/6281388990012?text=Halo%20Admin%20Dzikra%20Grup,%20saya%20tertarik%20dengan%20kegiatan%20Dzikra%20Grup%20dan%20ingin%20bergabung/berkolaborasi."
+              href="https://wa.me/6281312271662?text=Halo%20Admin%20Dzikra%20Group,%20saya%20tertarik%20dengan%20kegiatan%20Dzikra%20Group%20dan%20ingin%20bergabung/berkolaborasi."
               target="_blank"
               rel="noreferrer"
               className="px-4 py-2 rounded-xl bg-[#ffd700] hover:bg-[#e6c200] text-[#09090b] font-bold text-xs whitespace-nowrap shadow-md transition-all cursor-pointer"

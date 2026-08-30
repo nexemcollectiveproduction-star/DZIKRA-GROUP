@@ -116,7 +116,7 @@ export const MemberPortalModal: React.FC<MemberPortalModalProps> = ({
                 <div className="w-11 h-11 rounded-2xl bg-[#0d0c13] border border-[#ffd700]/30 p-1 flex items-center justify-center shadow-md overflow-hidden">
                   <img
                     src={mainLogo}
-                    alt="Logo Dzikra Grup"
+                    alt="Logo Dzikra Group"
                     className="w-full h-full object-contain"
                   />
                 </div>
@@ -130,7 +130,7 @@ export const MemberPortalModal: React.FC<MemberPortalModalProps> = ({
                   KSU KAROMAH SINERGI INDONESIA
                 </h4>
                 <span className="text-[10px] text-[#ffd700] font-mono tracking-widest uppercase">
-                  Dzikra Grup Holding
+                  Dzikra Group Holding
                 </span>
               </div>
             </div>

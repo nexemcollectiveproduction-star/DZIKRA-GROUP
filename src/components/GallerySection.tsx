@@ -78,11 +78,11 @@ export const GallerySection: React.FC<GallerySectionProps> = ({
             const unit = units.find((u) => u.id === newUnitId);
             onAddMedia({
               unitId: newUnitId,
-              unitName: unit?.name || 'Dzikra Grup',
+              unitName: unit?.name || 'Dzikra Group',
               title: newTitle || file.name,
               type: isVideo ? 'video' : 'image',
               url: dataUrl,
-              caption: newCaption || 'Foto dokumentasi produk Dzikra Grup',
+              caption: newCaption || 'Foto dokumentasi produk Dzikra Group',
             });
             setIsAddModalOpen(false);
             setNewTitle('');
@@ -108,7 +108,7 @@ export const GallerySection: React.FC<GallerySectionProps> = ({
     const unit = units.find((u) => u.id === newUnitId);
     onAddMedia({
       unitId: newUnitId,
-      unitName: unit?.name || 'Dzikra Grup',
+      unitName: unit?.name || 'Dzikra Group',
       title: newTitle || 'Media Baru Dzikra',
       type: newType,
       url: newUrl,
@@ -129,7 +129,7 @@ export const GallerySection: React.FC<GallerySectionProps> = ({
             Dokumentasi & Produk
           </span>
           <h2 className="font-serif font-black text-3xl sm:text-4xl md:text-5xl text-white mt-2 relative inline-block">
-            Galeri Foto & Video Dzikra Grup
+            Galeri Foto & Video Dzikra Group
           </h2>
           <div className="w-20 h-1 bg-[#ffd700] mx-auto mt-3 rounded-full" />
           <p className="mt-4 text-sm sm:text-base text-white/70 leading-relaxed font-light">
@@ -304,7 +304,7 @@ export const GallerySection: React.FC<GallerySectionProps> = ({
                     {activeLightboxMedia.title}
                   </h4>
                   <span className="text-xs text-[#ffd700] font-mono">
-                    {activeLightboxMedia.unitName || 'Dzikra Grup'}
+                    {activeLightboxMedia.unitName || 'Dzikra Group'}
                   </span>
                 </div>
                 <button

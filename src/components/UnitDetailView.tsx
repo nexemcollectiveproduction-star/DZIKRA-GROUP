@@ -322,7 +322,7 @@ export const UnitDetailView: React.FC<UnitDetailViewProps> = ({
                     )}
 
                     <a
-                      href={`https://wa.me/6281388990012?text=Halo%20Admin%20Dzikra%20Grup,%20saya%20tertarik%20dengan%20produk%20${encodeURIComponent(prod.name)}%20dari%20unit%20${encodeURIComponent(unit.name)}`}
+                      href={`https://wa.me/6281312271662?text=Halo%20Admin%20Dzikra%20Group,%20saya%20tertarik%20dengan%20produk%20${encodeURIComponent(prod.name)}%20dari%20unit%20${encodeURIComponent(unit.name)}`}
                       target="_blank"
                       rel="noreferrer"
                       className="text-xs font-bold text-white/90 hover:text-[#ffd700] flex items-center gap-1"

@@ -53,7 +53,7 @@ export const AboutSection: React.FC = () => {
             Mengenal Lebih Dekat
           </span>
           <h2 className="font-serif font-black text-3xl sm:text-4xl md:text-5xl text-white mt-2 relative inline-block">
-            Tentang Dzikra Grup
+            Tentang Dzikra Group
           </h2>
           <div className="w-20 h-1 bg-[#ffd700] mx-auto mt-3 rounded-full" />
           <p className="mt-4 text-base text-white/70 leading-relaxed font-light">
@@ -74,7 +74,7 @@ export const AboutSection: React.FC = () => {
             </h3>
 
             <p className="text-sm sm:text-base text-white/75 leading-relaxed font-light">
-              Dzikra Grup lahir dari semangat persaudaraan dan kebersamaan untuk menciptakan ekosistem bisnis yang tidak hanya berorientasi pada keuntungan materi, melainkan mengedepankan keberkahan, keadilan pembagian hasil usaha (SHU), dan pemberdayaan nyata bagi seluruh anggota.
+              Dzikra Group lahir dari semangat persaudaraan dan kebersamaan untuk menciptakan ekosistem bisnis yang tidak hanya berorientasi pada keuntungan materi, melainkan mengedepankan keberkahan, keadilan pembagian hasil usaha (SHU), dan pemberdayaan nyata bagi seluruh anggota.
             </p>
 
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-2">
@@ -165,7 +165,7 @@ export const AboutSection: React.FC = () => {
               Struktur Kepengurusan & Tim Manajemen Resmi
             </h3>
             <p className="text-xs sm:text-sm text-white/60 mt-2">
-              Jajaran kepengurusan dan divisi pelaksana profesional yang mengawal tata kelola Dzikra Grup & KSU Karomah Sinergi Indonesia.
+              Jajaran kepengurusan dan divisi pelaksana profesional yang mengawal tata kelola Dzikra Group & KSU Karomah Sinergi Indonesia.
             </p>
           </div>
 
@@ -219,7 +219,7 @@ export const AboutSection: React.FC = () => {
 
                   <div className="mt-4 pt-3 border-t border-white/5 flex items-center justify-between text-[11px] text-white/40 font-mono">
                     <span>Divisi {member.category}</span>
-                    <span className="text-[#ffd700]">Dzikra Grup</span>
+                    <span className="text-[#ffd700]">Dzikra Group</span>
                   </div>
                 </div>
               );
@@ -260,7 +260,7 @@ export const AboutSection: React.FC = () => {
               5 Kelompok Layanan Terpadu
             </h3>
             <p className="text-xs sm:text-sm text-white/60 mt-1">
-              Cakupan sektor usaha yang saling terintegrasi dalam satu wadah manajemen Dzikra Grup.
+              Cakupan sektor usaha yang saling terintegrasi dalam satu wadah manajemen Dzikra Group.
             </p>
           </div>
 

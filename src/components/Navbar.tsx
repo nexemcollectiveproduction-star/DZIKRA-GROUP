@@ -108,11 +108,12 @@ export const Navbar: React.FC<NavbarProps> = ({
           {/* Brand Logo & Name */}
           <a href="#beranda" className="flex items-center gap-3.5 group">
             {mainLogo ? (
-              <div className="w-12 h-12 rounded-2xl bg-[#14121d] border border-[#ffd700]/30 p-1.5 flex items-center justify-center overflow-hidden shadow-lg group-hover:scale-105 transition-transform">
+              <div className="w-12 h-12 rounded-2xl bg-[#14121d] border border-[#ffd700]/40 p-1.5 flex items-center justify-center overflow-hidden shadow-lg group-hover:scale-105 transition-all relative">
+                <div className="absolute inset-0 bg-gradient-to-tr from-[#ffd700]/10 via-transparent to-[#ffd700]/15 opacity-0 group-hover:opacity-100 transition-opacity" />
                 <img
                   src={mainLogo}
-                  alt="Logo Dzikra Grup"
-                  className="w-full h-full object-contain"
+                  alt="Logo Dzikra Group"
+                  className="w-full h-full object-contain filter group-hover:drop-shadow-[0_0_8px_rgba(255,215,0,0.5)] transition-all"
                 />
               </div>
             ) : (
@@ -124,7 +125,7 @@ export const Navbar: React.FC<NavbarProps> = ({
             <div className="flex flex-col">
               <div className="flex items-center gap-2">
                 <span className="font-serif font-extrabold text-xl sm:text-2xl tracking-wide text-white group-hover:text-[#ffd700] transition-colors">
-                  DZIKRA <span className="text-[#ffd700]">GRUP</span>
+                  DZIKRA <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#ffd700] via-[#fff5c0] to-[#f39c12] bg-[length:200%_200%] animate-gold-shimmer font-black">GROUP</span>
                 </span>
                 <span className="px-2 py-0.5 rounded-full bg-[#ffd700]/15 text-[#ffd700] text-[10px] font-bold uppercase tracking-wider border border-[#ffd700]/30 hidden sm:inline-block font-mono">
                   10 Unit
@@ -155,7 +156,7 @@ export const Navbar: React.FC<NavbarProps> = ({
               <button
                 onClick={onOpenAdminDashboard}
                 className="px-3.5 py-2 rounded-xl bg-gradient-to-r from-[#ffd700] to-[#e6b800] text-[#09090b] text-xs font-bold shadow-md transition-all flex items-center gap-1.5 cursor-pointer hover:scale-105"
-                title="Kelola Logo Dzikra Grup, Unit, Berita & Koperasi"
+                title="Kelola Logo Dzikra Group, Unit, Berita & Koperasi"
               >
                 <SlidersHorizontal className="w-3.5 h-3.5" />
                 <span>Panel Pengelolaan</span>
@@ -285,7 +286,7 @@ export const Navbar: React.FC<NavbarProps> = ({
 
           <div className="pt-2 border-t border-white/10 flex items-center justify-between text-xs text-white/60">
             <span>KSU Karomah Sinergi Indonesia</span>
-            <a href="https://wa.me/6281388990012" target="_blank" rel="noreferrer" className="text-[#ffd700] flex items-center gap-1">
+            <a href="https://wa.me/6281312271662" target="_blank" rel="noreferrer" className="text-[#ffd700] flex items-center gap-1">
               <PhoneCall className="w-3 h-3" />
               <span>WhatsApp Admin</span>
             </a>
