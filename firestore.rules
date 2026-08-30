@@ -1,0 +1,91 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+
+    // Global helper functions
+    function isValidId(id) {
+      return id is string && id.size() <= 128 && id.matches('^[a-zA-Z0-9_\\-]+$');
+    }
+
+    function incoming() {
+      return request.resource.data;
+    }
+
+    function existing() {
+      return resource.data;
+    }
+
+    function isSignedIn() {
+      return request.auth != null;
+    }
+
+    // Default Deny Catch-All
+    match /{document=**} {
+      allow read, write: if false;
+    }
+
+    // 1. Loan Applications (Simpan Pinjam Koperasi)
+    match /loan_applications/{loanId} {
+      allow get: if isValidId(loanId);
+      allow list: if true;
+      allow create: if isValidId(loanId) &&
+        incoming().fullName is string && incoming().fullName.size() > 0 && incoming().fullName.size() <= 150 &&
+        incoming().phone is string && incoming().phone.size() <= 30 &&
+        incoming().loanType is string && incoming().loanType.size() <= 100 &&
+        incoming().amount is number && incoming().amount > 0 &&
+        incoming().tenure is number && incoming().tenure > 0 &&
+        incoming().status in ['Menunggu Persetujuan', 'Disetujui', 'Ditolak'];
+      allow update: if isValidId(loanId) &&
+        incoming().status in ['Menunggu Persetujuan', 'Disetujui', 'Ditolak'];
+      allow delete: if isValidId(loanId);
+    }
+
+    // 2. News Articles (Warta & Liputan Kegiatan Dzikra Grup)
+    match /news_articles/{articleId} {
+      allow get, list: if true;
+      allow create, update: if isValidId(articleId) &&
+        incoming().title is string && incoming().title.size() > 0 && incoming().title.size() <= 250 &&
+        incoming().category is string && incoming().category.size() <= 100 &&
+        incoming().summary is string && incoming().summary.size() <= 1000 &&
+        incoming().content is string && incoming().content.size() <= 50000;
+      allow delete: if isValidId(articleId);
+    }
+
+    // 3. Member Accounts (Buku Besar Tabungan & Simpanan Anggota KSU Karomah)
+    match /member_accounts/{memberNo} {
+      allow get, list: if true;
+      allow create, update: if isValidId(memberNo) &&
+        incoming().fullName is string && incoming().fullName.size() > 0 && incoming().fullName.size() <= 150 &&
+        incoming().totalSimpananPokok is number &&
+        incoming().totalSimpananWajib is number &&
+        incoming().totalSimpananSukarela is number;
+      allow delete: if isValidId(memberNo);
+    }
+
+    // 4. Gallery Items (Dokumentasi Media Unit Usaha)
+    match /gallery_items/{itemId} {
+      allow get, list: if true;
+      allow create, update: if isValidId(itemId) &&
+        incoming().title is string && incoming().title.size() > 0 && incoming().title.size() <= 200 &&
+        incoming().type in ['image', 'video'] &&
+        incoming().url is string && incoming().url.size() <= 50000;
+      allow delete: if isValidId(itemId);
+    }
+
+    // 5. App Settings & Branding (Logo Resmi & Konfigurasi)
+    match /app_settings/{settingId} {
+      allow get, list: if true;
+      allow create, update: if isValidId(settingId);
+      allow delete: if isValidId(settingId);
+    }
+
+    // 6. Contact & Consultation Messages
+    match /contact_messages/{messageId} {
+      allow get, list: if true;
+      allow create: if isValidId(messageId) &&
+        incoming().name is string && incoming().name.size() > 0 && incoming().name.size() <= 150 &&
+        incoming().message is string && incoming().message.size() > 0 && incoming().message.size() <= 3000;
+      allow update, delete: if isValidId(messageId);
+    }
+  }
+}

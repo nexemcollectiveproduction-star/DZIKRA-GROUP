@@ -57,26 +57,30 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
                 </div>
               )}
 
-              {/* Quick Action Button to Edit/Change Logo */}
+              {/* Quick Action Button to Edit/Change Logo (Only visible to authenticated Administrator) */}
+              {isAdmin && (
+                <button
+                  type="button"
+                  onClick={onOpenEditLogo}
+                  className="absolute -bottom-2 -right-2 px-2.5 py-1.5 rounded-xl bg-gradient-to-r from-[#ffd700] to-[#cca300] hover:from-[#ffe066] hover:to-[#b38f00] text-[#09090b] text-[11px] font-extrabold shadow-xl border border-white/30 flex items-center gap-1.5 cursor-pointer hover:scale-110 active:scale-95 transition-all"
+                  title="Edit dan Ganti Logo Dzikra Grup"
+                >
+                  <Edit3 className="w-3.5 h-3.5 text-[#09090b]" />
+                  <span>Ganti Logo</span>
+                </button>
+              )}
+            </div>
+
+            {isAdmin && (
               <button
                 type="button"
                 onClick={onOpenEditLogo}
-                className="absolute -bottom-2 -right-2 px-2.5 py-1.5 rounded-xl bg-gradient-to-r from-[#ffd700] to-[#cca300] hover:from-[#ffe066] hover:to-[#b38f00] text-[#09090b] text-[11px] font-extrabold shadow-xl border border-white/30 flex items-center gap-1.5 cursor-pointer hover:scale-110 active:scale-95 transition-all"
-                title="Edit dan Ganti Logo Dzikra Grup"
+                className="mt-3 text-xs text-[#ffd700]/80 hover:text-[#ffd700] font-semibold flex items-center gap-1.5 cursor-pointer hover:underline"
               >
-                <Edit3 className="w-3.5 h-3.5 text-[#09090b]" />
-                <span>Ganti Logo</span>
+                <ImageIcon className="w-3.5 h-3.5 text-[#ffd700]" />
+                <span>Kelola / Ganti Logo Dzikra & Unit Usaha</span>
               </button>
-            </div>
-
-            <button
-              type="button"
-              onClick={onOpenEditLogo}
-              className="mt-3 text-xs text-[#ffd700]/80 hover:text-[#ffd700] font-semibold flex items-center gap-1.5 cursor-pointer hover:underline"
-            >
-              <ImageIcon className="w-3.5 h-3.5 text-[#ffd700]" />
-              <span>Kelola / Ganti Logo Dzikra & Unit Usaha</span>
-            </button>
+            )}
           </div>
 
           {/* Official Badge */}

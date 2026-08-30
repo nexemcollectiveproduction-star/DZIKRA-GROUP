@@ -32,6 +32,22 @@ import {
 } from './data/dzikraData';
 import { BusinessUnit, GalleryMediaItem, MemberAccountDemo, NewsArticle } from './types';
 import { DZIKRA_OFFICIAL_LOGO_SVG } from './assets/dzikraLogo';
+import {
+  syncLoanApplications,
+  saveLoanApplicationToFirebase,
+  deleteLoanApplicationFromFirebase,
+  syncNewsArticles,
+  saveNewsArticleToFirebase,
+  deleteNewsArticleFromFirebase,
+  syncMemberAccounts,
+  saveMemberAccountToFirebase,
+  deleteMemberAccountFromFirebase,
+  syncGalleryItems,
+  saveGalleryItemToFirebase,
+  deleteGalleryItemFromFirebase,
+  syncAppSettings,
+  saveAppSettingsToFirebase
+} from './lib/firebase';
 
 interface LoanApplicationRecord {
   id: string;
@@ -163,6 +179,50 @@ export default function App() {
   const [loanModalDefaultType, setLoanModalDefaultType] = useState<string>('Pinjaman Modal Usaha');
   const [isMemberModalOpen, setIsMemberModalOpen] = useState<boolean>(false);
 
+  // Firebase Real-Time Firestore Sync
+  useEffect(() => {
+    const unsubLoans = syncLoanApplications((remoteLoans) => {
+      if (remoteLoans && remoteLoans.length > 0) {
+        setLoanApplications(remoteLoans);
+      }
+    });
+
+    const unsubNews = syncNewsArticles((remoteNews) => {
+      if (remoteNews && remoteNews.length > 0) {
+        setNewsArticles(remoteNews);
+      }
+    });
+
+    const unsubMembers = syncMemberAccounts((remoteMembers) => {
+      if (remoteMembers && Object.keys(remoteMembers).length > 0) {
+        setMemberAccounts(remoteMembers);
+      }
+    });
+
+    const unsubGallery = syncGalleryItems((remoteGallery) => {
+      if (remoteGallery && remoteGallery.length > 0) {
+        setGalleryItems(remoteGallery);
+      }
+    });
+
+    const unsubBranding = syncAppSettings((settings) => {
+      if (settings?.mainLogo) {
+        setMainLogo(settings.mainLogo);
+      }
+      if (settings?.unitLogos) {
+        setUnitLogos(settings.unitLogos);
+      }
+    });
+
+    return () => {
+      unsubLoans();
+      unsubNews();
+      unsubMembers();
+      unsubGallery();
+      unsubBranding();
+    };
+  }, []);
+
   // Persist Admin State
   useEffect(() => {
     try {
@@ -251,7 +311,9 @@ export default function App() {
     const reader = new FileReader();
     reader.onload = (e) => {
       if (e.target?.result) {
-        setMainLogo(e.target.result as string);
+        const logoData = e.target.result as string;
+        setMainLogo(logoData);
+        saveAppSettingsToFirebase({ mainLogo: logoData, unitLogos });
       }
     };
     reader.readAsDataURL(file);
@@ -263,6 +325,7 @@ export default function App() {
       return;
     }
     setMainLogo(dataUrl);
+    saveAppSettingsToFirebase({ mainLogo: dataUrl, unitLogos });
   };
 
   const handleResetMainLogo = () => {
@@ -271,6 +334,7 @@ export default function App() {
       return;
     }
     setMainLogo(DZIKRA_OFFICIAL_LOGO_SVG);
+    saveAppSettingsToFirebase({ mainLogo: DZIKRA_OFFICIAL_LOGO_SVG, unitLogos });
   };
 
   // Handler for uploading/changing a unit's logo
@@ -283,10 +347,12 @@ export default function App() {
     reader.onload = (e) => {
       if (e.target?.result) {
         const dataUrl = e.target.result as string;
-        setUnitLogos((prev) => ({
-          ...prev,
+        const updated = {
+          ...unitLogos,
           [unitId]: dataUrl,
-        }));
+        };
+        setUnitLogos(updated);
+        saveAppSettingsToFirebase({ mainLogo, unitLogos: updated });
       }
     };
     reader.readAsDataURL(file);
@@ -297,11 +363,10 @@ export default function App() {
       handleRequireAdmin('mereset logo unit');
       return;
     }
-    setUnitLogos((prev) => {
-      const copy = { ...prev };
-      delete copy[unitId];
-      return copy;
-    });
+    const copy = { ...unitLogos };
+    delete copy[unitId];
+    setUnitLogos(copy);
+    saveAppSettingsToFirebase({ mainLogo, unitLogos: copy });
   };
 
   // Handler to select unit and scroll to its dedicated section
@@ -325,6 +390,7 @@ export default function App() {
       uploadedAt: new Date().toISOString(),
     };
     setGalleryItems((prev) => [newItem, ...prev]);
+    saveGalleryItemToFirebase(newItem);
   };
 
   const handleRemoveMedia = (mediaId: string) => {
@@ -333,6 +399,7 @@ export default function App() {
       return;
     }
     setGalleryItems((prev) => prev.filter((m) => m.id !== mediaId));
+    deleteGalleryItemFromFirebase(mediaId);
   };
 
   const handleUpdateMediaUrl = (id: string, newUrl: string, newType?: 'image' | 'video') => {
@@ -340,22 +407,28 @@ export default function App() {
       handleRequireAdmin('mengubah URL atau berkas media produk');
       return;
     }
-    setGalleryItems((prev) =>
-      prev.map((item) =>
-        item.id === id
-          ? { ...item, url: newUrl, type: newType || item.type }
-          : item
-      )
-    );
+    const targetItem = galleryItems.find((m) => m.id === id);
+    if (targetItem) {
+      const updatedItem: GalleryMediaItem = {
+        ...targetItem,
+        url: newUrl,
+        type: newType || targetItem.type,
+      };
+      setGalleryItems((prev) =>
+        prev.map((item) => (item.id === id ? updatedItem : item))
+      );
+      saveGalleryItemToFirebase(updatedItem);
+    }
   };
 
-  // News Handlers (Full CRUD with localStorage persistence)
+  // News Handlers (Full CRUD with Firestore persistence)
   const handleAddNewsArticle = (article: NewsArticle) => {
     if (!isAdmin) {
       handleRequireAdmin('menambahkan berita atau kegiatan baru');
       return;
     }
     setNewsArticles((prev) => [article, ...prev]);
+    saveNewsArticleToFirebase(article);
   };
 
   const handleDeleteNewsArticle = (articleId: string) => {
@@ -364,6 +437,7 @@ export default function App() {
       return;
     }
     setNewsArticles((prev) => prev.filter((a) => a.id !== articleId));
+    deleteNewsArticleFromFirebase(articleId);
   };
 
   const handleUpdateNewsArticle = (article: NewsArticle) => {
@@ -374,6 +448,7 @@ export default function App() {
     setNewsArticles((prev) =>
       prev.map((a) => (a.id === article.id ? article : a))
     );
+    saveNewsArticleToFirebase(article);
   };
 
   const handleSaveNewsFromEditor = (articleData: NewsArticle) => {
@@ -390,13 +465,18 @@ export default function App() {
   // Member Management Handlers (Cooperative recruitment and savings)
   const handleUpdateMemberAccount = (memberNo: string, updated: Partial<MemberAccountDemo>) => {
     if (!isAdmin) return;
-    setMemberAccounts((prev) => ({
-      ...prev,
-      [memberNo]: {
-        ...prev[memberNo],
+    const current = memberAccounts[memberNo];
+    if (current) {
+      const fullUpdated: MemberAccountDemo = {
+        ...current,
         ...updated,
-      },
-    }));
+      };
+      setMemberAccounts((prev) => ({
+        ...prev,
+        [memberNo]: fullUpdated,
+      }));
+      saveMemberAccountToFirebase(fullUpdated);
+    }
   };
 
   const handleAddMemberAccount = (account: MemberAccountDemo) => {
@@ -405,6 +485,7 @@ export default function App() {
       ...prev,
       [account.memberNo]: account,
     }));
+    saveMemberAccountToFirebase(account);
   };
 
   const handleDeleteMemberAccount = (memberNo: string) => {
@@ -414,18 +495,33 @@ export default function App() {
       delete copy[memberNo];
       return copy;
     });
+    deleteMemberAccountFromFirebase(memberNo);
   };
 
   // Loan Management Handlers
   const handleRegisterLoanApplication = (appRecord: LoanApplicationRecord) => {
     setLoanApplications((prev) => [appRecord, ...prev]);
+    saveLoanApplicationToFirebase(appRecord);
   };
 
   const handleUpdateLoanStatus = (appId: string, newStatus: 'Menunggu Persetujuan' | 'Disetujui' | 'Ditolak') => {
     if (!isAdmin) return;
     setLoanApplications((prev) =>
-      prev.map((l) => (l.id === appId ? { ...l, status: newStatus } : l))
+      prev.map((l) => {
+        if (l.id === appId) {
+          const updated = { ...l, status: newStatus };
+          saveLoanApplicationToFirebase(updated);
+          return updated;
+        }
+        return l;
+      })
     );
+  };
+
+  const handleDeleteLoanApplication = (appId: string) => {
+    if (!isAdmin) return;
+    setLoanApplications((prev) => prev.filter((l) => l.id !== appId));
+    deleteLoanApplicationFromFirebase(appId);
   };
 
   const selectedUnit = units.find((u) => u.id === selectedUnitId) || units[0];
@@ -637,6 +733,7 @@ export default function App() {
         onAddMemberAccount={handleAddMemberAccount}
         onDeleteMemberAccount={handleDeleteMemberAccount}
         onUpdateLoanStatus={handleUpdateLoanStatus}
+        onDeleteLoanApplication={handleDeleteLoanApplication}
       />
 
       {/* Direct Quick Edit Logo Modal */}

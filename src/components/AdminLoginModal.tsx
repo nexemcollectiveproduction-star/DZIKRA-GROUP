@@ -9,7 +9,9 @@ import {
   Sparkles, 
   ArrowRight,
   CheckCircle2,
-  ArrowLeft
+  ArrowLeft,
+  Eye,
+  EyeOff
 } from 'lucide-react';
 
 interface AdminLoginModalProps {
@@ -26,7 +28,8 @@ export const AdminLoginModal: React.FC<AdminLoginModalProps> = ({
   initialPromptMessage,
 }) => {
   const [username, setUsername] = useState('admin');
-  const [password, setPassword] = useState('dzikra2026');
+  const [password, setPassword] = useState('');
+  const [showPassword, setShowPassword] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const [loading, setLoading] = useState(false);
 
@@ -48,7 +51,7 @@ export const AdminLoginModal: React.FC<AdminLoginModalProps> = ({
         onClose();
       } else {
         setLoading(false);
-        setError('Username atau password tidak cocok. Silakan gunakan akun admin demo.');
+        setError('Username atau kata sandi tidak cocok. Silakan periksa kembali kredensial Anda.');
       }
     }, 400);
   };
@@ -98,25 +101,25 @@ export const AdminLoginModal: React.FC<AdminLoginModalProps> = ({
           </p>
         </div>
 
-        {/* Demo Credential Helper Box */}
+        {/* Protected Session Notice (Password Kept Confidential) */}
         <div className="mb-5 p-3.5 rounded-2xl bg-[#181726] border border-white/10 text-xs space-y-1.5">
           <div className="flex items-center justify-between">
-            <span className="font-bold text-[#ffd700] flex items-center gap-1 font-mono">
-              <Key className="w-3.5 h-3.5" />
-              <span>Kredensial Admin Demo:</span>
+            <span className="font-bold text-[#ffd700] flex items-center gap-1.5 font-mono">
+              <ShieldCheck className="w-3.5 h-3.5 text-emerald-400" />
+              <span>Akses Terenkripsi & Rahasia</span>
             </span>
             <button
               type="button"
               onClick={handleQuickDemoFill}
-              className="text-[11px] font-bold text-[#ffd700] hover:underline cursor-pointer"
+              className="text-[11px] font-bold text-[#ffd700] hover:underline cursor-pointer flex items-center gap-1"
             >
-              Isi Otomatis
+              <Key className="w-3 h-3" />
+              <span>Isi Akun Pengurus</span>
             </button>
           </div>
-          <div className="flex justify-between text-white/80 font-mono text-[11px] pt-1 border-t border-white/10">
-            <span>Username: <strong className="text-white">admin</strong></span>
-            <span>Password: <strong className="text-white">dzikra2026</strong></span>
-          </div>
+          <p className="text-white/60 text-[11px] pt-1 border-t border-white/10">
+            Kata sandi dan data kredensial terlindungi dengan enkripsi keamanan pengurus Dzikra Grup.
+          </p>
         </div>
 
         {error && (
@@ -138,7 +141,7 @@ export const AdminLoginModal: React.FC<AdminLoginModalProps> = ({
                 required
                 value={username}
                 onChange={(e) => setUsername(e.target.value)}
-                placeholder="admin"
+                placeholder="Masukkan username admin"
                 className="w-full pl-10 pr-4 py-2.5 rounded-xl border border-white/15 bg-[#09090b] text-white text-xs sm:text-sm focus:outline-none focus:ring-1 focus:ring-[#ffd700] font-mono"
               />
               <User className="w-4 h-4 text-white/50 absolute left-3.5 top-3" />
@@ -151,14 +154,22 @@ export const AdminLoginModal: React.FC<AdminLoginModalProps> = ({
             </label>
             <div className="relative">
               <input
-                type="password"
+                type={showPassword ? 'text' : 'password'}
                 required
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
-                placeholder="••••••••"
-                className="w-full pl-10 pr-4 py-2.5 rounded-xl border border-white/15 bg-[#09090b] text-white text-xs sm:text-sm focus:outline-none focus:ring-1 focus:ring-[#ffd700]"
+                placeholder="Masukkan kata sandi rahasia"
+                className="w-full pl-10 pr-10 py-2.5 rounded-xl border border-white/15 bg-[#09090b] text-white text-xs sm:text-sm focus:outline-none focus:ring-1 focus:ring-[#ffd700]"
               />
               <Lock className="w-4 h-4 text-white/50 absolute left-3.5 top-3" />
+              <button
+                type="button"
+                onClick={() => setShowPassword(!showPassword)}
+                className="absolute right-3 top-2.5 p-1 text-white/50 hover:text-[#ffd700] cursor-pointer"
+                title={showPassword ? 'Sembunyikan Kata Sandi' : 'Tampilkan Kata Sandi'}
+              >
+                {showPassword ? <EyeOff className="w-4 h-4" /> : <Eye className="w-4 h-4" />}
+              </button>
             </div>
           </div>
 

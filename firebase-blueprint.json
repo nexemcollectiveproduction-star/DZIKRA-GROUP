@@ -1,0 +1,136 @@
+{
+  "entities": {
+    "LoanApplication": {
+      "title": "LoanApplication",
+      "description": "Pengajuan pinjaman dana simpan pinjam koperasi",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string", "maxLength": 64 },
+        "fullName": { "type": "string", "maxLength": 150 },
+        "nik": { "type": "string", "maxLength": 30 },
+        "phone": { "type": "string", "maxLength": 30 },
+        "loanType": { "type": "string", "maxLength": 100 },
+        "amount": { "type": "number" },
+        "tenure": { "type": "number" },
+        "purpose": { "type": "string", "maxLength": 500 },
+        "date": { "type": "string", "maxLength": 50 },
+        "status": {
+          "type": "string",
+          "enum": ["Menunggu Persetujuan", "Disetujui", "Ditolak"]
+        },
+        "createdAt": { "type": "string" }
+      },
+      "required": ["id", "fullName", "phone", "loanType", "amount", "tenure", "status"]
+    },
+    "NewsArticle": {
+      "title": "NewsArticle",
+      "description": "Warta kegiatan, liputan resmi, dan berita Dzikra Grup",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string", "maxLength": 64 },
+        "title": { "type": "string", "maxLength": 250 },
+        "category": { "type": "string", "maxLength": 100 },
+        "date": { "type": "string", "maxLength": 50 },
+        "author": { "type": "string", "maxLength": 120 },
+        "unitTag": { "type": "string", "maxLength": 120 },
+        "readTime": { "type": "string", "maxLength": 50 },
+        "summary": { "type": "string", "maxLength": 800 },
+        "content": { "type": "string", "maxLength": 20000 },
+        "imageUrl": { "type": "string", "maxLength": 2000 },
+        "isPinned": { "type": "boolean" },
+        "tags": { "type": "array" },
+        "createdAt": { "type": "string" }
+      },
+      "required": ["id", "title", "category", "summary", "content"]
+    },
+    "MemberAccount": {
+      "title": "MemberAccount",
+      "description": "Buku besar akun keanggotaan dan simpanan KSU Karomah Sinergi Indonesia",
+      "type": "object",
+      "properties": {
+        "memberNo": { "type": "string", "maxLength": 64 },
+        "fullName": { "type": "string", "maxLength": 150 },
+        "joinedDate": { "type": "string", "maxLength": 50 },
+        "status": { "type": "string", "maxLength": 100 },
+        "totalSimpananPokok": { "type": "number" },
+        "totalSimpananWajib": { "type": "number" },
+        "totalSimpananSukarela": { "type": "number" },
+        "totalSimpananBerjangka": { "type": "number" },
+        "estimasiSHU": { "type": "number" },
+        "pinjamanAktif": { "type": "object" },
+        "transaksiTerakhir": { "type": "array" },
+        "updatedAt": { "type": "string" }
+      },
+      "required": ["memberNo", "fullName", "totalSimpananPokok", "totalSimpananWajib", "totalSimpananSukarela"]
+    },
+    "GalleryItem": {
+      "title": "GalleryItem",
+      "description": "Dokumentasi galeri foto dan video unit usaha",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string", "maxLength": 64 },
+        "unitId": { "type": "number" },
+        "unitName": { "type": "string", "maxLength": 150 },
+        "title": { "type": "string", "maxLength": 200 },
+        "type": { "type": "string", "enum": ["image", "video"] },
+        "url": { "type": "string", "maxLength": 50000 },
+        "caption": { "type": "string", "maxLength": 500 },
+        "uploadedAt": { "type": "string", "maxLength": 50 }
+      },
+      "required": ["id", "title", "type", "url"]
+    },
+    "AppSetting": {
+      "title": "AppSetting",
+      "description": "Konfigurasi branding dan logo Dzikra Grup",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string", "maxLength": 64 },
+        "mainLogo": { "type": "string", "maxLength": 100000 },
+        "unitLogos": { "type": "object" },
+        "updatedAt": { "type": "string" }
+      },
+      "required": ["id"]
+    },
+    "ContactMessage": {
+      "title": "ContactMessage",
+      "description": "Pesan konsultasi dan kontak dari pengunjung website",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string", "maxLength": 64 },
+        "name": { "type": "string", "maxLength": 150 },
+        "email": { "type": "string", "maxLength": 150 },
+        "phone": { "type": "string", "maxLength": 50 },
+        "category": { "type": "string", "maxLength": 100 },
+        "message": { "type": "string", "maxLength": 2000 },
+        "createdAt": { "type": "string" }
+      },
+      "required": ["id", "name", "message"]
+    }
+  },
+  "firestore": {
+    "/loan_applications/{loanId}": {
+      "schema": "LoanApplication",
+      "description": "Pengajuan pinjaman simpan pinjam koperasi"
+    },
+    "/news_articles/{articleId}": {
+      "schema": "NewsArticle",
+      "description": "Publikasi warta dan liputan kegiatan Dzikra Grup"
+    },
+    "/member_accounts/{memberNo}": {
+      "schema": "MemberAccount",
+      "description": "Data dan saldo buku besar anggota koperasi KSU Karomah"
+    },
+    "/gallery_items/{itemId}": {
+      "schema": "GalleryItem",
+      "description": "Dokumentasi media galeri unit usaha"
+    },
+    "/app_settings/{settingId}": {
+      "schema": "AppSetting",
+      "description": "Pengaturan logo dan branding visual"
+    },
+    "/contact_messages/{messageId}": {
+      "schema": "ContactMessage",
+      "description": "Pesan dan konsultasi dari masyarakat/mitra"
+    }
+  }
+}

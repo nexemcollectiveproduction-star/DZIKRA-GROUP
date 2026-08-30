@@ -15,6 +15,7 @@ import {
 } from 'lucide-react';
 import { BusinessUnit } from '../types';
 import { DZIKRA_OFFICIAL_CONTACT } from '../data/dzikraData';
+import { saveContactMessageToFirebase } from '../lib/firebase';
 
 interface ContactSectionProps {
   units: BusinessUnit[];
@@ -54,6 +55,17 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ units }) => {
     if (!fullName || !phone) return;
 
     setIsSubmitted(true);
+
+    // Save to Firebase Firestore
+    saveContactMessageToFirebase({
+      id: `msg-${Date.now()}`,
+      name: fullName,
+      email: '',
+      phone: phone,
+      category: interestType,
+      message: `Unit: ${selectedUnit} | Pesan: ${message || '-'}`,
+      createdAt: new Date().toISOString(),
+    });
 
     const textMessage = `Halo Admin Dzikra Grup & KSU Karomah Sinergi, saya ingin mengajukan kerjasama / layanan:
 - Nama: ${fullName}
